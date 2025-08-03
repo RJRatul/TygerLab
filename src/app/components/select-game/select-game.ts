@@ -47,27 +47,33 @@ export class SelectGame implements AfterViewInit {
   }
 
   @HostListener('window:mousemove', ['$event'])
-  @HostListener('window:touchmove', ['$event'])
-  onDragMove(event: MouseEvent | TouchEvent) {
-    if (!this.dragging || !this.sliderRect) return;
+@HostListener('window:touchmove', ['$event'])
+onDragMove(event: MouseEvent | TouchEvent) {
+  if (!this.dragging || !this.sliderRect) return;
 
-    let clientX: number;
-    if (event instanceof MouseEvent) {
-      clientX = event.clientX;
-    } else {
-      clientX = event.touches[0].clientX;
-    }
-
-    const offsetX = clientX - this.sliderRect.left;
-    const percent = Math.max(0, Math.min(100, (offsetX / this.sliderRect.width) * 100));
-
-    const index = Math.round(percent / (100 / (this.sliderPoints.length - 6)));
-
-    this.updateDuration(index);
+  let clientX: number;
+  if (event instanceof MouseEvent) {
+    clientX = event.clientX;
+  } else {
+    clientX = event.touches[0].clientX;
   }
 
+  const offsetX = clientX - this.sliderRect.left;
+
+  if (offsetX < 0 || offsetX > this.sliderRect.width) return;
+
+  const percent = (offsetX / this.sliderRect.width) * 100;
+
+  const totalSteps = this.sliderPoints.length - 1; // Fix: use full range
+  const index = Math.round(percent / (100 / totalSteps));
+
+  this.updateDuration(index);
+}
+
+
+
   updateDuration(index: number) {
-    this.selectedDuration = index + 5; // Because it starts at 6
+    this.selectedDuration = index + 5;
   }
 
   get endTime(): string {
