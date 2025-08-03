@@ -87,6 +87,13 @@
       box-shadow: none;
       padding: 16px;
     }
+
+    .game__timeline-start-end-text {
+      margin: 10px 0px 0px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
     &__slider-desktop {
       width: 100%;
       max-width: 592px;
@@ -176,7 +183,7 @@
       .game__recommended-tag {
         position: absolute;
         top: 44px;
-        left: 16px;
+        left: 3px;
         font-size: 12px;
         color: #ffffff;
         background: #2169db;
@@ -187,6 +194,19 @@
         gap: 4px;
         white-space: nowrap;
 
+        &::before {
+          content: "";
+          position: absolute;
+          top: -5px;
+          left: 14%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 0;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-bottom: 6px solid #2169db;
+        }
+
         .star-icon {
           width: 1rem;
           height: 1rem;
@@ -195,13 +215,14 @@
       }
     }
 
-    &__recommended-text {
+    .game__recommended-text {
       font-size: 12px;
       color: #1a1a1a;
-      margin-bottom: 20px;
+      margin-top: 40px;
+      margin-bottom: 10px;
     }
 
-    &__continue-btn {
+    .game__continue-btn {
       background: #1662dd;
       color: #fff;
       border: none;
@@ -215,14 +236,13 @@
     .game__timeline {
       background: transparent;
       border-radius: 16px;
-      padding: 16px;
       display: flex;
       justify-content: center;
       align-items: center;
       .no-wrap {
         white-space: nowrap;
       }
-      &-bar {
+      .game__timeline-bar {
         flex: 1;
         display: flex;
         align-items: center;
@@ -230,6 +250,8 @@
         height: 30px;
         background: #ffffff;
         border-radius: 15px;
+        justify-content: center;
+        align-items: center;
       }
       .game__timeline-image {
         transform-origin: left center;
@@ -268,7 +290,7 @@
 
         .game__timeline-text {
           font-size: 13px;
-          color: #1a1a1a;
+          color: #b9b9b9;
           font-weight: 500;
 
           strong {

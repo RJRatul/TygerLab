@@ -17,12 +17,15 @@
   </div>
   <div class="game">
     <div class="game__timeline">
-      <span class="no-wrap">5:30 PM</span>
+
       <div class="game__timeline-bar">
         <div class="game__timeline-start">
-          <i class="arrow up"></i>
+          <img
+          src="/arrowUp.png"
+          alt="Arrow Up Icon"
+          [ngStyle]="{width: '20px'}"
+        />
         </div>
-
         <img
           src="/stadium-icon.png"
           alt="Stadium Icon"
@@ -50,12 +53,18 @@
         </div>
 
         <div class="game__timeline-end">
-          <i class="arrow down"></i>
+          <img
+          src="/arrowDown.png"
+          alt="Arrow Down Icon"
+          [ngStyle]="{width: '20px'}"
+        />
         </div>
       </div>
+    </div>
+    <div class="game__timeline-start-end-text">
+      <span class="no-wrap">5:30 PM</span>
       <span class="no-wrap">{{ endTime }}</span>
     </div>
-
     <div class="game__duration">
       <p>How long would you like your ride to be?</p>
       <h1 class="game__duration-hour">
@@ -92,7 +101,6 @@
             (touchstart)="onDragStart($event)"
           ></div>
 
-          <!-- Recommended Tag aligned to first dot -->
           <div class="game__recommended-tag" *ngIf="selectedDuration > 6">
             <svg
               class="star-icon"
@@ -111,7 +119,7 @@
       </div>
 
       <div class="game__recommended-text">
-        ⭐ Recommended for your best game day experience
+        <img src="/kid_star.png" alt="Left Icon" /> <br> Recommended for your best game day experience
       </div>
     </div>
 
