@@ -61,7 +61,7 @@ export class SelectGame implements AfterViewInit {
     const offsetX = clientX - this.sliderRect.left;
     const percent = Math.max(0, Math.min(100, (offsetX / this.sliderRect.width) * 100));
 
-    const index = Math.round(percent / (100 / (this.sliderPoints.length - 1)));
+    const index = Math.round(percent / (100 / (this.sliderPoints.length - 6)));
 
     this.updateDuration(index);
   }
