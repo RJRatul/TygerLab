@@ -88,7 +88,7 @@
           <div
             class="slider-fill"
             [style.width.%]="
-              (selectedDuration - 6) * (100 / (sliderPoints.length - 1))
+              (selectedDuration - 6) * (90 / (sliderPoints.length - 1))
             "
           ></div>
 
@@ -96,7 +96,7 @@
             #handle
             class="slider-handle"
             [style.left.%]="
-              (selectedDuration - 6) * (100 / (sliderPoints.length - 1))
+              (selectedDuration - 6) * (90 / (sliderPoints.length - 1))
             "
             (mousedown)="onDragStart($event)"
             (touchstart)="onDragStart($event)"

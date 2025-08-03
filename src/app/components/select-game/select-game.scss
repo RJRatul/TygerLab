@@ -129,6 +129,9 @@
           opacity: 1;
           width: 12px;
           height: 12px;
+          @media (max-width: 767px) {
+            background-color: #2169db;
+          }
         }
 
         &.star {
@@ -161,6 +164,9 @@
         top: 50%;
         transform: translateY(-50%);
         z-index: 1;
+        @media (max-width: 767px) {
+          background: transparent;
+        }
       }
 
       .slider-handle {
@@ -175,6 +181,10 @@
         z-index: 3;
         cursor: grab;
         transition: left 0.2s ease;
+        @media (max-width: 767px) {
+          background: #2169db;
+          border: 5px solid #3778df;
+        }
       }
 
       .slider-handle:active {
@@ -254,7 +264,6 @@
         align-items: center;
         @media (max-width: 767px) {
           justify-content: center;
-
         }
       }
       .game__timeline-image {
@@ -294,10 +303,9 @@
         left: -125px;
         @media (max-width: 767px) {
           left: -104px;
-
         }
         .game__timeline-text {
-          font-size: 13px;
+          font-size: 10px;
           color: #b9b9b9;
           font-weight: 500;
 
@@ -324,7 +332,7 @@
       text-align: center;
       margin-top: 30px;
 
-        .game__duration-hour {
+      .game__duration-hour {
         font-size: 48px;
         font-weight: 700;
 

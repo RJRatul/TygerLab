@@ -25,7 +25,7 @@ export class SelectGame implements AfterViewInit {
   ngAfterViewInit() {
     const track = document.querySelector('.slider-track') as HTMLElement;
     const dots = track?.querySelectorAll('.slider-dot') || [];
-    const spacing = 100 / (this.sliderPoints.length - 1);
+    const spacing = 90 / (this.sliderPoints.length - 1);
 
     dots.forEach((dot, index) => {
       (dot as HTMLElement).style.left = `${spacing * index}%`;
