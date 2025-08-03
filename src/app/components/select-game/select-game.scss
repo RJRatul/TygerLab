@@ -94,7 +94,7 @@
       align-items: center;
       justify-content: space-between;
     }
-    &__slider-desktop {
+    .game__slider-desktop {
       width: 100%;
       max-width: 592px;
       margin: 0 auto 20px;
@@ -250,14 +250,18 @@
         height: 30px;
         background: #ffffff;
         border-radius: 15px;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
+        @media (max-width: 767px) {
+          justify-content: center;
+
+        }
       }
       .game__timeline-image {
         transform-origin: left center;
         transition: transform 0.3s ease;
         position: relative;
-        left: 112px;
+        // left: 112px;
         border-radius: 12px;
         width: 180px;
         @media (max-width: 767px) {
@@ -272,7 +276,7 @@
         align-items: center;
         justify-content: center;
         @media (max-width: 767px) {
-          left: -94px;
+          // left: -94px;
         }
       }
 
@@ -287,7 +291,11 @@
         padding: 6px 16px;
         height: 15px;
         width: 71px;
+        left: -125px;
+        @media (max-width: 767px) {
+          left: -104px;
 
+        }
         .game__timeline-text {
           font-size: 13px;
           color: #b9b9b9;
@@ -312,11 +320,11 @@
       }
     }
 
-    &__duration {
+    .game__duration {
       text-align: center;
       margin-top: 30px;
 
-      &-hour {
+        .game__duration-hour {
         font-size: 48px;
         font-weight: 700;
 
