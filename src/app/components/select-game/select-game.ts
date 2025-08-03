@@ -81,4 +81,16 @@ export class SelectGame implements AfterViewInit {
     const paddedMinute = minute.toString().padStart(2, '0');
     return `${displayHour}:${paddedMinute} ${ampm}`;
   }
+  get stadiumTranslateX(): number {
+    const minOffset = 0;
+    const maxOffset = 30;
+    const progress = (this.selectedDuration - 6) / (this.sliderPoints.length - 6);
+    return minOffset + progress * (maxOffset - minOffset);
+  }
+  get stadiumScale(): number {
+    const minScale = 0.9;
+    const maxScale = 1.05;
+    const progress = (this.selectedDuration - 6) / (this.sliderPoints.length - 6);
+    return minScale + progress * (maxScale - minScale);
+  }
 }

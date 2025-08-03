@@ -2,15 +2,18 @@
   <div class="game__progress">
     <div class="game__step-bar">
       <span class="game__step-dot game__step-dot--active"></span>
-      <span class="game__step-line game__step-dot--active"></span>
-      <span class="game__step-dot"></span>
+      <span class="game__step-line game__step-line--active"></span>
+      <span class="game__step-dot game__step-dot--active"></span>
       <span class="game__step-line"></span>
       <span class="game__step-dot"></span>
       <span class="game__step-line"></span>
       <span class="game__step-dot"></span>
     </div>
 
-    <h2 class="game__title">◀️ Select Your Game</h2>
+    <h2 class="game__title">
+      <span> <img src="/leftArrow.png" alt="Left Icon" /> </span> Set Total Ride
+      Hour
+    </h2>
   </div>
   <div class="game">
     <div class="game__timeline">
@@ -20,9 +23,26 @@
           <i class="arrow up"></i>
         </div>
 
-        <img src="/stadium-icon.png" alt="Stadium Icon" class="game__timeline-image"/>
+        <img
+          src="/stadium-icon.png"
+          alt="Stadium Icon"
+          class="game__timeline-image"
+          [ngStyle]="{
+            transform: 'scaleX(' + stadiumScale + ')'
+          }"
+        />
         <div class="game__timeline-active">
-          <div class="game__timeline-indicator game__timeline-icon">
+          <div
+            class="game__timeline-indicator game__timeline-icon"
+            [ngStyle]="{
+              transform:
+                'translateX(' +
+                stadiumTranslateX +
+                'px) scale(' +
+                stadiumScale +
+                ')'
+            }"
+          >
             <span class="game__timeline-text"
               >Game starts at <strong>8:00 PM</strong></span
             >
