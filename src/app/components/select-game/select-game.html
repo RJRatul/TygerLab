@@ -57,10 +57,13 @@
           ></div>
 
           <div
+            #handle
             class="slider-handle"
             [style.left.%]="
               (selectedDuration - 6) * (100 / (sliderPoints.length - 1))
             "
+            (mousedown)="onDragStart($event)"
+            (touchstart)="onDragStart($event)"
           ></div>
 
           <!-- Recommended Tag aligned to first dot -->
