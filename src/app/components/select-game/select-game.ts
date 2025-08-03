@@ -64,7 +64,7 @@ onDragMove(event: MouseEvent | TouchEvent) {
 
   const percent = (offsetX / this.sliderRect.width) * 100;
 
-  const totalSteps = this.sliderPoints.length - 1; // Fix: use full range
+  const totalSteps = this.sliderPoints.length - 1;
   const index = Math.round(percent / (100 / totalSteps));
 
   this.updateDuration(index);
